@@ -32,10 +32,10 @@ export default function Page(props: PageProps) {
   }, [props.params]);
 
   return (
-    <>
+    <div className="dark:bg-gray-300 dark:text-black">
       {content && (
         <RenderBuilderContent content={content} model={builderModelName} />
       )}
-    </>
+    </div>
   );
 }
