@@ -23,4 +23,10 @@ Builder.registerComponent(Counter, {
 
 Builder.registerComponent(Timeline, {
   name: "Timeline",
+  inputs: [
+    {
+      name: "items",
+      type: "string",
+    },
+  ],
 });
