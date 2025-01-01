@@ -1,6 +1,13 @@
 "use client";
 import { builder, Builder } from "@builder.io/react";
-import Counter from "./components/Counter/Counter";
+
+import dynamic from "next/dynamic";
+const Counter = dynamic(() => import("./components/Counter/Counter"), {
+  ssr: false,
+});
+const Timeline = dynamic(() => import("./components/Timeline/Timeline"), {
+  ssr: false,
+});
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -12,4 +19,8 @@ Builder.registerComponent(Counter, {
       type: "number",
     },
   ],
+});
+
+Builder.registerComponent(Timeline, {
+  name: "Timeline",
 });
