@@ -79,12 +79,14 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
               <div className="card-body gap-4">
                 <h5 className="card-title text-lg">{item.title}</h5>
                 <p>{item.details}</p>
-                {item.file_link && (
+                {(item.file_link || item.buttonName) && (
                   <div className="card-actions">
                     <a
+                      aria-disabled={item.file_link?.trim() ? "false" : "true"}
                       href={item.file_link}
                       className="btn btn-sm btn-soft dark:bg-blue-500 dark:text-gray-50"
                       onClick={(e) => e.stopPropagation()}
+                      target="_blank"
                     >
                       {item.buttonName ? item.buttonName : "File Link"}
                     </a>
@@ -113,12 +115,14 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
               <div className="card-body gap-4">
                 <h5 className="card-title text-lg">{item.title}</h5>
                 <p>{item.details}</p>
-                {item.file_link && (
+                {(item.file_link || item.buttonName) && (
                   <div className="card-actions">
                     <a
+                      aria-disabled={item.file_link?.trim() ? "false" : "true"}
                       href={item.file_link}
                       className="btn btn-sm btn-soft dark:bg-blue-500 dark:text-gray-50"
                       onClick={(e) => e.stopPropagation()}
+                      target="_blank"
                     >
                       {item.buttonName ? item.buttonName : "File Link"}
                     </a>
