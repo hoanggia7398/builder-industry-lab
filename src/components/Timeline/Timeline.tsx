@@ -28,6 +28,7 @@ export type TimelineItem = {
   date: string;
   popupContent?: string;
   isPopupFullScreen?: boolean;
+  buttonName?: string;
 };
 
 const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
@@ -118,7 +119,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
                       href={item.file_link}
                       className="btn btn-sm btn-soft btn-secondary"
                     >
-                      File Link
+                      {item.buttonName ? item.buttonName : "File Link"}
                     </a>
                   </div>
                 )}
@@ -178,7 +179,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
     <div className="w-full">
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical timeline-centered">
         {data.map((item: TimelineItem, index: number) =>
-          renderTimelineItem(item, index)
+          renderTimelineItem(item, index),
         )}
       </ul>
     </div>
