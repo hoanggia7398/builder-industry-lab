@@ -41,7 +41,7 @@ type TimelineItem = {
   isPopupFullScreen: boolean;
 };
 
-const TimeLine = ({ items }: { items: string }) => {
+const TimeLine = ({ items }: { items?: string }) => {
   const [data, setData] = useState<TimelineItem[]>(fakeData);
   useEffect(() => {
     try {
