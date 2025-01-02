@@ -1,6 +1,7 @@
 "use client";
 import TimeLine from "@/components/Timeline/Timeline";
 import React from "react";
+import { fakeData } from "./timeline";
 
 const TestPage: React.FC = () => {
   return (
@@ -10,7 +11,9 @@ const TestPage: React.FC = () => {
           OJT SPRING 2025 TIMELINE
         </h1>
       </div>
-      <TimeLine />
+      <div className="md:max-w-4xl mx-auto">
+        <TimeLine items={fakeData} />
+      </div>
     </div>
   );
 };
