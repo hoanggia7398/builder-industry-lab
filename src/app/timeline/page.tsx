@@ -5,7 +5,7 @@ import { fakeData } from "./timeline";
 
 const TestPage: React.FC = () => {
   return (
-    <div className="dark:bg-gray-300 dark:text-black p-10">
+    <div className="dark:bg-gray-300 dark:text-black p-2 md:p-10">
       <div>
         <h1 className="text-4xl font-bold text-center mb-10">
           OJT SPRING 2025 TIMELINE
