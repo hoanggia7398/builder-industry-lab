@@ -11,7 +11,7 @@ const TestPage: React.FC = () => {
           OJT SPRING 2025 TIMELINE
         </h1>
       </div>
-      <div className="md:max-w-4xl mx-auto">
+      <div className="md:max-w-5xl mx-auto">
         <TimeLine items={fakeData} />
       </div>
     </div>
