@@ -86,7 +86,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
                       className="btn btn-sm btn-soft btn-secondary"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      File Link
+                      {item.buttonName ? item.buttonName : "File Link"}
                     </a>
                   </div>
                 )}
@@ -118,6 +118,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
                     <a
                       href={item.file_link}
                       className="btn btn-sm btn-soft btn-secondary"
+                      onClick={(e) => e.stopPropagation()}
                     >
                       {item.buttonName ? item.buttonName : "File Link"}
                     </a>
