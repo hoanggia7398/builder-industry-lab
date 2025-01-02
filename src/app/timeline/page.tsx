@@ -4,7 +4,12 @@ import React from "react";
 
 const TestPage: React.FC = () => {
   return (
-    <div>
+    <div className="dark:bg-gray-300 dark:text-black p-10">
+      <div>
+        <h1 className="text-4xl font-bold text-center mb-10">
+          OJT SPRING 2025 TIMELINE
+        </h1>
+      </div>
       <TimeLine />
     </div>
   );
