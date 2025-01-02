@@ -83,7 +83,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
                   <div className="card-actions">
                     <a
                       href={item.file_link}
-                      className="btn btn-sm btn-soft btn-secondary"
+                      className="btn btn-sm btn-soft dark:bg-blue-500 dark:text-gray-50"
                       onClick={(e) => e.stopPropagation()}
                     >
                       {item.buttonName ? item.buttonName : "File Link"}
@@ -117,7 +117,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
                   <div className="card-actions">
                     <a
                       href={item.file_link}
-                      className="btn btn-sm btn-soft btn-secondary"
+                      className="btn btn-sm btn-soft dark:bg-blue-500 dark:text-gray-50"
                       onClick={(e) => e.stopPropagation()}
                     >
                       {item.buttonName ? item.buttonName : "File Link"}
