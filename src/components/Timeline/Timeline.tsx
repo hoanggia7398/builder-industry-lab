@@ -44,6 +44,14 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
       console.log(error);
     }
   }, [items]);
+  function isValidUrl(file_link: string) {
+    try {
+      new URL(file_link);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
   const renderTimelineItem = (item: TimelineItem, index: number) => (
     <React.Fragment key={item.id}>
       <li key={item.id}>
@@ -81,7 +89,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
                 <p>{item.details}</p>
                 {(item.file_link || item.buttonName) && (
                   <div className="card-actions">
-                    {item.file_link?.trim() ? (
+                    {item.file_link?.trim() && isValidUrl(item.file_link) ? (
                       <a
                         href={item.file_link}
                         className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
@@ -122,7 +130,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
                 <p>{item.details}</p>
                 {(item.file_link || item.buttonName) && (
                   <div className="card-actions">
-                    {item.file_link?.trim() ? (
+                    {item.file_link?.trim() && isValidUrl(item.file_link) ? (
                       <a
                         href={item.file_link}
                         className="btn btn-sm btn-soft dark:bg-blue-500 dark:text-gray-50"
@@ -133,7 +141,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
                       </a>
                     ) : (
                       <span className="btn btn-sm btn-soft dark:bg-blue-500 dark:text-gray-50">
-                        {item.buttonName ? item.buttonName : "File Link"}
+                        {item.buttonName ? item.buttonName : "Invalid Link"}
                       </span>
                     )}
                   </div>
@@ -194,7 +202,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
     <div className="w-full">
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical timeline-centered">
         {data.map((item: TimelineItem, index: number) =>
-          renderTimelineItem(item, index),
+          renderTimelineItem(item, index)
         )}
       </ul>
     </div>
@@ -202,3 +210,6 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
 };
 
 export default TimeLine;
+
+
+
