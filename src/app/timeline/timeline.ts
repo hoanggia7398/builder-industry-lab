@@ -104,7 +104,7 @@ export const fakeData: TimelineItem[] = [
     status: "completed",
     title: "Mock Interview",
     details:
-      "Sinh viên sẽ đến trường theo thời gian hẹn trước để tiến hành phỏng vấn ở vị trí mà các bạn chọn",
+      "Sinh viên sẽ đến trường theo thời gian hẹn trước để tiến hành phỏng vấn ở vị trí mà các bạn chọn\n(click vào để xem barem điểm)",
     category: "Giaidoan_1",
     is_show: true,
     file_link: undefined,
