@@ -86,7 +86,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
             >
               <div className="card-body gap-4">
                 <h5 className="card-title text-lg">{item.title}</h5>
-                <p>{item.details}</p>
+                <p className="text-justify">{item.details}</p>
                 {(item.file_link || item.buttonName) && (
                   <div className="card-actions">
                     {item.file_link?.trim() && isValidUrl(item.file_link) ? (
@@ -127,7 +127,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
             >
               <div className="card-body gap-4">
                 <h5 className="card-title text-lg">{item.title}</h5>
-                <p>{item.details}</p>
+                <p className="text-justify">{item.details}</p>
                 {(item.file_link || item.buttonName) && (
                   <div className="card-actions">
                     {item.file_link?.trim() && isValidUrl(item.file_link) ? (
