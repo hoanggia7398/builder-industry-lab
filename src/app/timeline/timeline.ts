@@ -162,7 +162,35 @@ export const fakeData: TimelineItem[] = [
     category: "Giaidoan_1",
     is_show: true,
     file_link: undefined,
-    popupContent: `<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Barem Điểm Mock Interview</title> <script src="https://cdn.tailwindcss.com"></script> </head> <body class="flex justify-center items-center min-h-screen bg-gray-100"> <div class="bg-white p-6 rounded-xl shadow-lg w-96"> <h1 class="text-lg font-bold text-gray-800 mb-4 text-center">BAREM ĐIỂM MOCK INTERVIEW</h1> <p class="text-gray-700"> <span class="font-bold text-blue-500">20%</span> từ kết quả của bài take-home project </p> <p class="text-gray-700 mt-4"> <span class="font-bold text-blue-500">80%</span> từ 2-4 câu hỏi phỏng vấn lý thuyết chuyên ngành và liên quan đến bài take-home project </p> <hr class="border-t-2 border-dashed border-gray-300 my-4"> <p class="text-gray-800 font-semibold text-center"> = <span class="text-blue-500">100%</span> kết quả Mock Interview </p> </div> </body> </html>`,
+    popupContent: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barem Điểm Mock Interview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md mx-4">
+        <h1 class="text-lg font-bold text-gray-800 mb-4 text-center">
+            BAREM ĐIỂM MOCK INTERVIEW
+        </h1>
+        <p class="text-gray-700">
+            <span class="font-bold text-blue-500">20%</span> từ kết quả của bài take-home project
+        </p>
+        <p class="text-gray-700 mt-4">
+            <span class="font-bold text-blue-500">80%</span> từ 2-4 câu hỏi phỏng vấn lý thuyết chuyên ngành và liên quan đến bài take-home project
+        </p>
+        <hr class="border-t-2 border-dashed border-gray-300 my-4">
+        <p class="text-gray-800 font-semibold text-center">
+            = <span class="text-blue-500">100%</span> kết quả Mock Interview
+        </p>
+    </div>
+</body>
+</html>
+`
+    ,
     isPopupFullScreen: false,
     buttonName: undefined,
     date: "11/01/2025",
