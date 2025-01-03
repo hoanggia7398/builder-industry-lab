@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FlyonuiScript from "@/components/Scripts/FlyonuiScript";
