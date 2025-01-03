@@ -62,7 +62,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
           <div
             className={`timeline-${index % 2 === 0 ? "start" : "end"} me-4 mt-8 max-md:pt-2 ${index % 2 === 0 ? "block" : "hidden"} md:block`}
           >
-            <div className="text-base-content/50 text-sm font-normal text-gray-400">
+            <div className="text-base-content/50 text-base font-bold text-gray-500">
               {item.date}
             </div>
           </div>
@@ -103,7 +103,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
         </>
         <>
           <div className="timeline-start me-4 mt-8 max-md:pt-2 block md:hidden">
-            <div className="text-base-content/50 text-sm font-normal text-gray-400">
+            <div className="text-base-content/50 text-sm font-normal text-gray-500">
               {item.date}
             </div>
           </div>
