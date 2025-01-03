@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FlyonuiScript from "@/components/Scripts/FlyonuiScript";
@@ -26,28 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        {/* Google Tag Manager Script */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-02Q9E8S7PN"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-02Q9E8S7PN');
-            `,
-          }}
-        ></script>
-      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
         <FlyonuiScript />
+        <GoogleAnalytics gaId="G-02Q9E8S7PN" />
       </body>
     </html>
   );
