@@ -137,7 +137,7 @@ export const fakeData: TimelineItem[] = [
 `,    
     isPopupFullScreen: false,
     buttonName: undefined,
-    date: "09:00 10/01/2025",
+    date: "09:00 - 12:00 10/01/2025",
   },
   {
     id: 9,
