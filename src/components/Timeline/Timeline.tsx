@@ -81,15 +81,20 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
                 <p>{item.details}</p>
                 {(item.file_link || item.buttonName) && (
                   <div className="card-actions">
-                    <a
-                      aria-disabled={item.file_link?.trim() ? "false" : "true"}
-                      href={item.file_link}
-                      className="btn btn-sm btn-soft dark:bg-blue-500 dark:text-gray-50"
-                      onClick={(e) => e.stopPropagation()}
-                      target="_blank"
-                    >
-                      {item.buttonName ? item.buttonName : "File Link"}
-                    </a>
+                    {item.file_link?.trim() ? (
+                      <a
+                        href={item.file_link}
+                        className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
+                        onClick={(e) => e.stopPropagation()}
+                        target="_blank"
+                      >
+                        {item.buttonName ? item.buttonName : "File Link"}
+                      </a>
+                    ) : (
+                      <span className="btn btn-sm btn-soft bg-blue-500 text-gray-50">
+                        {item.buttonName ? item.buttonName : "File Link"}
+                      </span>
+                    )}
                   </div>
                 )}
               </div>
@@ -117,15 +122,20 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
                 <p>{item.details}</p>
                 {(item.file_link || item.buttonName) && (
                   <div className="card-actions">
-                    <a
-                      aria-disabled={item.file_link?.trim() ? "false" : "true"}
-                      href={item.file_link}
-                      className="btn btn-sm btn-soft dark:bg-blue-500 dark:text-gray-50"
-                      onClick={(e) => e.stopPropagation()}
-                      target="_blank"
-                    >
-                      {item.buttonName ? item.buttonName : "File Link"}
-                    </a>
+                    {item.file_link?.trim() ? (
+                      <a
+                        href={item.file_link}
+                        className="btn btn-sm btn-soft dark:bg-blue-500 dark:text-gray-50"
+                        onClick={(e) => e.stopPropagation()}
+                        target="_blank"
+                      >
+                        {item.buttonName ? item.buttonName : "File Link"}
+                      </a>
+                    ) : (
+                      <span className="btn btn-sm btn-soft dark:bg-blue-500 dark:text-gray-50">
+                        {item.buttonName ? item.buttonName : "File Link"}
+                      </span>
+                    )}
                   </div>
                 )}
               </div>
