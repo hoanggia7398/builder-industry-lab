@@ -68,7 +68,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
         </div>
         <>
           <div
-            className={`timeline-${index % 2 === 0 ? "start" : "end"} me-4 mt-8 max-md:pt-2 ${index % 2 === 0 ? "block" : "hidden"} md:block`}
+            className={`timeline-${index % 2 === 0 ? "start" : "end"} me-4 mt-8 max-md:pt-2 hidden md:block`}
           >
             <div className="text-base-content/50 text-base font-bold text-gray-500">
               {item.date}
@@ -133,14 +133,14 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
                     {item.file_link?.trim() && isValidUrl(item.file_link) ? (
                       <a
                         href={item.file_link}
-                        className="btn btn-sm btn-soft dark:bg-blue-500 dark:text-gray-50"
+                        className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
                         onClick={(e) => e.stopPropagation()}
                         target="_blank"
                       >
                         {item.buttonName ? item.buttonName : "File Link"}
                       </a>
                     ) : (
-                      <span className="btn btn-sm btn-soft dark:bg-blue-500 dark:text-gray-50">
+                      <span className="btn btn-sm btn-soft bg-blue-500 text-gray-50">
                         {item.buttonName ? item.buttonName : "Invalid Link"}
                       </span>
                     )}
