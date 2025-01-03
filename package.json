@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "@builder.io/react": "^8.0.0",
+    "@next/third-parties": "^15.1.3",
     "flyonui": "^1.2.0",
-    "next": "15.1.3",
+    "next": "^15.1.3",
     "prettier": "^3.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
