@@ -9,10 +9,11 @@ export const fakeData: TimelineItem[] = [
       "Sinh viên sẽ nhận được đề bài technical interview nhỏ theo dạng take-home project. Sinh viên cần hoàn thành và demonstrate cho nhà tuyển dụng tại buổi Mock Interview. Nhà tuyển dụng sẽ đặt các câu hỏi xoay quanh các kiến thức liên quan đến kết quả của bài tập",
     category: "Giaidoan_1",
     is_show: true,
-    file_link: undefined,
+    file_link: "",
     popupContent: undefined,
     isPopupFullScreen: false,
-    date: "05/02/2024",
+    buttonName: "will be available on 06 Jan 2025",
+    date: "05/01/2025",
   },
   {
     id: 2,
@@ -25,7 +26,8 @@ export const fakeData: TimelineItem[] = [
     file_link: "https://drive.google.com/file/d/1C1MpXEiVRmuJdg9Vu61gSkV_G7XDGIor/view?usp=sharing",
     popupContent: undefined,
     isPopupFullScreen: false,
-    date: "05/02/2024",
+    buttonName: "Đề bài Behavioral Interview",
+    date: "05/01/2025",
   },
   {
     id: 3,
@@ -38,7 +40,8 @@ export const fakeData: TimelineItem[] = [
     file_link: "",
     popupContent: undefined,
     isPopupFullScreen: false,
-    date: "06/02/2024",
+    buttonName: undefined,
+    date: "06/01/2025",
   },
   {
     id: 4,
@@ -51,7 +54,8 @@ export const fakeData: TimelineItem[] = [
     file_link: "",
     popupContent: undefined,
     isPopupFullScreen: false,
-    date: "06/02/2024",
+    buttonName: undefined,
+    date: "06/01/2024",
   },
   {
     id: 5,
@@ -64,7 +68,8 @@ export const fakeData: TimelineItem[] = [
     file_link: "",
     popupContent: undefined,
     isPopupFullScreen: false,
-    date: "07/02/2025",
+    buttonName: undefined,
+    date: "07/01/2025",
   },
   {
     id: 6,
@@ -77,7 +82,8 @@ export const fakeData: TimelineItem[] = [
     file_link: "",
     popupContent: undefined,
     isPopupFullScreen: false,
-    date: "08/02/2025",
+    buttonName: undefined,
+    date: "08/01/2025",
   },
   {
     id: 7,
@@ -90,7 +96,8 @@ export const fakeData: TimelineItem[] = [
     file_link: "bỏ link google form vào",
     popupContent: undefined,
     isPopupFullScreen: false,
-    date: "09/02/2025",
+    buttonName: undefined,
+    date: "09/01/2025",
   },
   {
     id: 8,
@@ -103,7 +110,8 @@ export const fakeData: TimelineItem[] = [
     file_link: "bỏ link danh sách hẹn sinh viên vào",
     popupContent: `<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Barem Điểm Mock Interview</title> <script src="https://cdn.tailwindcss.com"></script> </head> <body class="flex justify-center items-center min-h-screen bg-gray-100"> <div class="bg-white p-6 rounded-xl shadow-lg w-96"> <h1 class="text-lg font-bold text-gray-800 mb-4 text-center">BAREM ĐIỂM MOCK INTERVIEW</h1> <p class="text-gray-700"> <span class="font-bold text-blue-500">20%</span> từ kết quả của bài take-home project </p> <p class="text-gray-700 mt-4"> <span class="font-bold text-blue-500">80%</span> từ 2-4 câu hỏi phỏng vấn lý thuyết chuyên ngành và liên quan đến bài take-home project </p> <hr class="border-t-2 border-dashed border-gray-300 my-4"> <p class="text-gray-800 font-semibold text-center"> = <span class="text-blue-500">100%</span> kết quả Mock Interview </p> </div> </body> </html>`,
     isPopupFullScreen: false,
-    date: "10/02/2025",
+    buttonName: undefined,
+    date: "10/01/2025",
   },
   {
     id: 9,
@@ -116,6 +124,7 @@ export const fakeData: TimelineItem[] = [
     file_link: "bỏ link danh sách hẹn sinh viên vào",
     popupContent: `<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Barem Điểm Mock Interview</title> <script src="https://cdn.tailwindcss.com"></script> </head> <body class="flex justify-center items-center min-h-screen bg-gray-100"> <div class="bg-white p-6 rounded-xl shadow-lg w-96"> <h1 class="text-lg font-bold text-gray-800 mb-4 text-center">BAREM ĐIỂM MOCK INTERVIEW</h1> <p class="text-gray-700"> <span class="font-bold text-blue-500">20%</span> từ kết quả của bài take-home project </p> <p class="text-gray-700 mt-4"> <span class="font-bold text-blue-500">80%</span> từ 2-4 câu hỏi phỏng vấn lý thuyết chuyên ngành và liên quan đến bài take-home project </p> <hr class="border-t-2 border-dashed border-gray-300 my-4"> <p class="text-gray-800 font-semibold text-center"> = <span class="text-blue-500">100%</span> kết quả Mock Interview </p> </div> </body> </html>`,
     isPopupFullScreen: false,
-    date: "11/02/2025",
+    buttonName: undefined,
+    date: "11/01/2025",
   },
 ];
