@@ -48,7 +48,8 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
     try {
       new URL(file_link);
       return true;
-    } catch (_) {
+    } catch (error) {
+      console.log('error', error);
       return false;
     }
   }
