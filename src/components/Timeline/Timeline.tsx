@@ -44,8 +44,8 @@ export type TimelineItemType = {
 
 const TimeLine = ({ items }: { items?: string | TimelineItemType[] }) => {
   const [data, setData] = useState<TimelineItemType[]>(fakeData);
-  const [nextEvent, setNextEvent] = useState<TimelineItemType | null>(null);
-  const [timeRemaining, setTimeRemaining] = useState<string>("");
+  // const [nextEvent, setNextEvent] = useState<TimelineItemType | null>(null);
+  // const [timeRemaining, setTimeRemaining] = useState<string>("");
 
   useEffect(() => {
     try {
@@ -60,53 +60,58 @@ const TimeLine = ({ items }: { items?: string | TimelineItemType[] }) => {
     }
   }, [items]);
 
-  useEffect(() => {
-    const upcomingEvents = data.filter(
-      (item) =>
-        new Date(item.date.split("/").reverse().join("-")).getTime() >
-        new Date().getTime(),
-    );
-    if (upcomingEvents.length > 0) {
-      const next = upcomingEvents.sort(
-        (a, b) =>
-          new Date(a.date.split("/").reverse().join("-")).getTime() -
-          new Date(b.date.split("/").reverse().join("-")).getTime(),
-      )[0];
-      setNextEvent(next);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   const upcomingEvents = data.filter(
+  //     (item) =>
+  //       new Date(item.date.split("/").reverse().join("-")).getTime() >
+  //       new Date().getTime()
+  //   );
+  //   if (upcomingEvents.length > 0) {
+  //     const next = upcomingEvents.sort(
+  //       (a, b) =>
+  //         new Date(a.date.split("/").reverse().join("-")).getTime() -
+  //         new Date(b.date.split("/").reverse().join("-")).getTime()
+  //     )[0];
+  //     setNextEvent(next);
+  //   }
+  // }, [data]);
 
-  useEffect(() => {
-    if (nextEvent) {
-      const interval = setInterval(() => {
-        const eventDate = new Date(
-          nextEvent.date.split("/").reverse().join("-"),
-        ).getTime();
-        const now = new Date().getTime();
-        const distance = eventDate - now;
+  // useEffect(() => {
+  //   if (nextEvent) {
+  //     const interval = setInterval(() => {
+  //       // Parse the date from nextEvent and convert it to GMT+7
+  //       const eventDate = new Date(
+  //         nextEvent.date.split("/").reverse().join("-")
+  //       );
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-        );
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  //       // Adjust to GMT+7 (7 hours ahead)
+  //       const gmtPlus7Date = new Date(eventDate.getTime() + 7 * 60 * 60 * 1000);
 
-        setTimeRemaining(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+  //       const now = new Date().getTime();
+  //       const distance = gmtPlus7Date.getTime() - now;
 
-        if (distance < 0) {
-          clearInterval(interval);
-          setTimeRemaining("Event has started");
-        }
-      }, 1000);
+  //       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  //       const hours = Math.floor(
+  //         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  //       );
+  //       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  //       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      return () => clearInterval(interval);
-    }
-  }, [nextEvent]);
+  //       setTimeRemaining(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+
+  //       if (distance < 0) {
+  //         clearInterval(interval);
+  //         setTimeRemaining("Event has started");
+  //       }
+  //     }, 1000);
+
+  //     return () => clearInterval(interval);
+  //   }
+  // }, [nextEvent]);
 
   return (
     <div className="w-full">
-      {nextEvent && (
+      {/* {nextEvent && (
         <div
           className="alert alert-soft flex flex-col gap-4 mb-10"
           role="alert"
@@ -116,7 +121,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItemType[] }) => {
           </h3>
           <p>Time Remaining: {timeRemaining}</p>
         </div>
-      )}
+      )} */}
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical timeline-centered">
         {data
           .sort((a, b) => {
