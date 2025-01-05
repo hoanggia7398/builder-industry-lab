@@ -38,6 +38,7 @@ export type TimelineItemType = {
   buttonList?: {
     name: string;
     link: string;
+    isDisabled?: boolean;
   }[];
 };
 

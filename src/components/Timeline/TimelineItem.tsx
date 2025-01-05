@@ -18,26 +18,31 @@ const TimelineItem = ({
       return false;
     }
   };
-  const renderButtonList = (buttonList: { name: string; link: string }[]) => (
+  const renderButtonList = (
+    buttonList: { name: string; link: string; isDisabled?: boolean }[],
+  ) => (
     <div className="card-actions">
       {buttonList.map((button, idx) =>
         isValidUrl(button.link) ? (
           <a
             key={idx}
             href={button.link}
-            className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
+            className={`btn btn-sm btn-soft bg-blue-500 text-gray-50 ${button.isDisabled ? "disabled" : ""}`}
             onClick={(e) => e.stopPropagation()}
             target="_blank"
+            rel="noopener noreferrer"
+            aria-disabled={button.isDisabled}
           >
             {button.name}
           </a>
         ) : (
-          <span
+          <button
             key={idx}
-            className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
+            className={`btn btn-sm btn-soft bg-blue-500 text-gray-50 ${button.isDisabled ? "disabled" : ""}`}
+            disabled={button.isDisabled}
           >
             {button.name}
-          </span>
+          </button>
         ),
       )}
     </div>
