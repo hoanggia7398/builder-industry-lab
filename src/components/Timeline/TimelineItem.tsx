@@ -149,7 +149,10 @@ const TimelineItem = ({
                 </button>
               </div>
               <div className="modal-body flex flex-col items-center">
-                <div dangerouslySetInnerHTML={{ __html: item.popupContent }} />
+                <div
+                  className="flex "
+                  dangerouslySetInnerHTML={{ __html: item.popupContent }}
+                />
               </div>
               <div className="modal-footer">
                 <button
