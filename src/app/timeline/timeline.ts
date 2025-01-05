@@ -146,4 +146,52 @@ export const fakeData: TimelineItemType[] = [
     buttonList: [],
     date: "11/01/2025",
   },
+  {
+    id: 11,
+    status: "completed",
+    title: "Chọn role",
+    details:
+      "Sinh viên điền vào form chọn role mình muốn ứng tuyển cho kỳ thực tập",
+    category: "Giaidoan_1",
+    is_show: true,
+    popupContent: undefined,
+    isPopupFullScreen: false,
+    buttonList: [
+      {
+        name: "Link chọn role",
+        link: "https://forms.gle/f66YQwBvamLPfJoW6",
+      },
+    ],
+    date: "06/01/2025",
+  },
+  {
+    id: 12,
+    status: "completed",
+    title: "Tham gia group sửa CV",
+    details:
+      "Sinh viên sẽ tham gia group để sửa CV theo role đã chọn, nhận feedback từ các chuyên gia và cố gắng hoàn thiện CV của mình\nNote: Sinh viên sử dụng tên thật để tham gia group, không sử dụng nickname",
+    category: "Giaidoan_1",
+    is_show: true,
+    popupContent: undefined,
+    isPopupFullScreen: false,
+    buttonList: [
+      {
+        name: "Group FE",
+        link: "https://zalo.me/g/rtypvj912",
+      },
+      {
+        name: "Group BE",
+        link: "https://zalo.me/g/avvjpe852",
+      },
+      {
+        name: "Group QA",
+        link: "https://zalo.me/g/qmgjiq276",
+      },
+      {
+        name: "Group BA",
+        link: "https://zalo.me/g/tladsa063",
+      },
+    ],
+    date: "06/01/2025",
+  },
 ];

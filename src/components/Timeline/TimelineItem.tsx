@@ -82,7 +82,15 @@ const TimelineItem = ({
             >
               <div className="card-body gap-4">
                 <h5 className="card-title text-lg">{item.title}</h5>
-                <p className="text-justify">{item.details}</p>
+                <p className="text-justify">
+                  {item.details &&
+                    item.details.split("\n").map((line, index) => (
+                      <React.Fragment key={index}>
+                        {line}
+                        <br />
+                      </React.Fragment>
+                    ))}
+                </p>
                 {item.buttonList &&
                   item.buttonList.length > 0 &&
                   renderButtonList(item.buttonList)}
