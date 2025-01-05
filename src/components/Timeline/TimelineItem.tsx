@@ -83,7 +83,9 @@ const TimelineItem = ({
               <div className="card-body gap-4">
                 <h5 className="card-title text-lg">{item.title}</h5>
                 <p className="text-justify">{item.details}</p>
-                {item.buttonList && renderButtonList(item.buttonList)}
+                {item.buttonList &&
+                  item.buttonList.length > 0 &&
+                  renderButtonList(item.buttonList)}
               </div>
             </div>
           </div>
