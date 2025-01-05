@@ -1,6 +1,6 @@
-import { TimelineItem } from "@/components/Timeline/Timeline";
+import { TimelineItemType } from "@/components/Timeline/Timeline";
 
-export const fakeData: TimelineItem[] = [
+export const fakeData: TimelineItemType[] = [
   {
     id: 1,
     status: "completed",

@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import TimelineItem from "./TimelineItem";
 
-const fakeData: TimelineItem[] = [
+const fakeData: TimelineItemType[] = [
   {
     id: 1,
     status: "completed",
@@ -24,7 +25,7 @@ const fakeData: TimelineItem[] = [
   },
 ];
 
-export type TimelineItem = {
+export type TimelineItemType = {
   id?: number;
   status?: string;
   title?: string;
@@ -40,8 +41,11 @@ export type TimelineItem = {
   }[];
 };
 
-const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
-  const [data, setData] = useState<TimelineItem[]>(fakeData);
+const TimeLine = ({ items }: { items?: string | TimelineItemType[] }) => {
+  const [data, setData] = useState<TimelineItemType[]>(fakeData);
+  const [nextEvent, setNextEvent] = useState<TimelineItemType | null>(null);
+  const [timeRemaining, setTimeRemaining] = useState<string>("");
+
   useEffect(() => {
     try {
       if (items && typeof items === "string") {
@@ -55,189 +59,63 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
     }
   }, [items]);
 
-  function isValidUrl(file_link: string) {
-    try {
-      new URL(file_link);
-      return true;
-    } catch (error) {
-      console.log("error", error);
-      return false;
+  useEffect(() => {
+    const upcomingEvents = data.filter(
+      (item) =>
+        new Date(item.date.split("/").reverse().join("-")).getTime() >
+        new Date().getTime(),
+    );
+    if (upcomingEvents.length > 0) {
+      const next = upcomingEvents.sort(
+        (a, b) =>
+          new Date(a.date.split("/").reverse().join("-")).getTime() -
+          new Date(b.date.split("/").reverse().join("-")).getTime(),
+      )[0];
+      setNextEvent(next);
     }
-  }
+  }, [data]);
 
-  const renderTimelineItem = (item: TimelineItem, index: number) => (
-    <React.Fragment key={item.id}>
-      <li key={item.id}>
-        <div className="timeline-middle h-16">
-          {new Date(item.date.split("/").reverse().join("-")).setHours(
-            0,
-            0,
-            0,
-            0,
-          ) <= new Date().setHours(0, 0, 0, 0) ? (
-            <span className="badge badge-primary size-4.5 rounded-full p-0">
-              <span className="icon-[tabler--check] text-primary-content size-3.5"></span>
-            </span>
-          ) : (
-            <span className="bg-secondary/20 flex size-4.5 items-center justify-center rounded-full">
-              <span className="badge badge-secondary size-3 rounded-full p-0" />
-            </span>
-          )}
-        </div>
-        {/* desktop responsive */}
-        <>
-          <div
-            className={`timeline-${index % 2 === 0 ? "start" : "end"} me-4 mt-8 max-md:pt-2 hidden md:block`}
-          >
-            <div className="text-base-content/50 text-base font-bold text-gray-500 dark:text-gray-200">
-              {item.date}
-            </div>
-          </div>
-          <div
-            aria-haspopup="dialog"
-            aria-expanded="false"
-            aria-controls={`basic-modal${index}`}
-            data-overlay={`#basic-modal${index}`}
-            className={`timeline-${index % 2 === 0 ? "end" : "start"} ms-4 mb-8 ${index % 2 === 0 ? "block" : "hidden"} md:block`}
-          >
-            <div
-              className={`card ${item.popupContent && item.popupContent.trim() && "cursor-pointer"}`}
-            >
-              <div className="card-body gap-4">
-                <h5 className="card-title text-lg">{item.title}</h5>
-                <p className="text-justify">{item.details}</p>
-                {item.buttonList && (
-                  <div className="card-actions">
-                    {item.buttonList.map((button, idx) =>
-                      isValidUrl(button.link) ? (
-                        <a
-                          key={idx}
-                          href={button.link}
-                          className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
-                          onClick={(e) => e.stopPropagation()}
-                          target="_blank"
-                        >
-                          {button.name}
-                        </a>
-                      ) : (
-                        <span
-                          key={idx}
-                          className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
-                        >
-                          {button.name}
-                        </span>
-                      ),
-                    )}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </>
-        {/* phone responsive */}
-        <>
-          <div className="timeline-start me-4 mt-8 max-md:pt-2 block md:hidden">
-            <div className="text-base-content/50 text-sm font-normal text-gray-500 dark:text-gray-200">
-              {item.date}
-            </div>
-          </div>
-          <div
-            aria-haspopup="dialog"
-            aria-expanded="false"
-            aria-controls={`basic-modal${index}`}
-            data-overlay={`#basic-modal${index}`}
-            className="timeline-end ms-4 mb-8 block md:hidden"
-          >
-            <div
-              className={`card ${item.popupContent && item.popupContent.trim() && "cursor-pointer"}`}
-            >
-              <div className="card-body gap-4">
-                <h5 className="card-title text-lg">{item.title}</h5>
-                <p className="text-justify">{item.details}</p>
-                {item.buttonList && (
-                  <div className="card-actions">
-                    {item.buttonList.map((button, idx) =>
-                      isValidUrl(button.link) ? (
-                        <a
-                          key={idx}
-                          href={button.link}
-                          className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
-                          onClick={(e) => e.stopPropagation()}
-                          target="_blank"
-                        >
-                          {button.name}
-                        </a>
-                      ) : (
-                        <span
-                          key={idx}
-                          className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
-                        >
-                          {button.name}
-                        </span>
-                      ),
-                    )}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </>
-        {index !== data.length - 1 &&
-          (new Date(item.date.split("/").reverse().join("-")).setHours(
-            0,
-            0,
-            0,
-            0,
-          ) <= new Date().setHours(0, 0, 0, 0) ? (
-            <hr className="bg-primary" />
-          ) : (
-            <hr />
-          ))}
-      </li>
-      {item.popupContent && item.popupContent.trim() && (
-        <div
-          id={`basic-modal${index}`}
-          key={`modal-${item.id}`}
-          className="overlay modal overlay-open:opacity-100 hidden"
-          role="dialog"
-          tabIndex={-1}
-        >
-          <div
-            className={`modal-dialog overlay-open:opacity-100 ${item.isPopupFullScreen && "max-w-none"}`}
-          >
-            <div className="modal-content">
-              <div className="modal-header">
-                <h3 className="modal-title">Information</h3>
-                <button
-                  type="button"
-                  className="btn btn-text btn-circle btn-sm absolute end-3 top-3"
-                  aria-label="Close"
-                  data-overlay={`#basic-modal${index}`}
-                >
-                  <span className="icon-[tabler--x] size-4"></span>
-                </button>
-              </div>
-              <div className="modal-body flex flex-col items-center">
-                <div dangerouslySetInnerHTML={{ __html: item.popupContent }} />
-              </div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  data-overlay={`#basic-modal${index}`}
-                >
-                  Got it!
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </React.Fragment>
-  );
+  useEffect(() => {
+    if (nextEvent) {
+      const interval = setInterval(() => {
+        const eventDate = new Date(
+          nextEvent.date.split("/").reverse().join("-"),
+        ).getTime();
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        setTimeRemaining(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+
+        if (distance < 0) {
+          clearInterval(interval);
+          setTimeRemaining("Event has started");
+        }
+      }, 1000);
+
+      return () => clearInterval(interval);
+    }
+  }, [nextEvent]);
 
   return (
     <div className="w-full">
+      {nextEvent && (
+        <div
+          className="alert alert-soft flex flex-col gap-4 mb-10"
+          role="alert"
+        >
+          <h3>
+            Next Event: <span className="font-bold">{nextEvent.title}</span>{" "}
+          </h3>
+          <p>Time Remaining: {timeRemaining}</p>
+        </div>
+      )}
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical timeline-centered">
         {data
           .sort((a, b) => {
@@ -248,9 +126,14 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
               new Date(yearB, monthB - 1, dayB).getTime()
             );
           })
-          .map((item: TimelineItem, index: number) =>
-            renderTimelineItem(item, index),
-          )}
+          .map((item: TimelineItemType, index: number) => (
+            <TimelineItem
+              isLast={index !== data.length - 1}
+              key={item.id}
+              item={item}
+              index={index}
+            />
+          ))}
       </ul>
     </div>
   );
