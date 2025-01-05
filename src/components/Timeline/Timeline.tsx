@@ -10,10 +10,17 @@ const fakeData: TimelineItem[] = [
       "Sinh viên sẽ nhận được đề bài technical interview nhỏ theo dạng take-home project. Sinh viên cần hoàn thành và demonstrate cho nhà tuyển dụng tại buổi Mock Interview. Nhà tuyển dụng sẽ đặt các câu hỏi xoay quanh các kiến thức liên quan đến kết quả của bài tập",
     category: "Giaidoan_1",
     is_show: true,
-    file_link: undefined,
-    popupContent: undefined,
-    isPopupFullScreen: false,
     date: "05/02/2024",
+    buttonList: [
+      {
+        name: "View Details",
+        link: "https://example.com/details",
+      },
+      {
+        name: "Download",
+        link: "https://example.com/download",
+      },
+    ],
   },
 ];
 
@@ -24,11 +31,13 @@ export type TimelineItem = {
   details?: string;
   category?: string;
   is_show?: boolean;
-  file_link?: string;
   date: string;
   popupContent?: string;
   isPopupFullScreen?: boolean;
-  buttonName?: string;
+  buttonList?: {
+    name: string;
+    link: string;
+  }[];
 };
 
 const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
@@ -36,7 +45,8 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
   useEffect(() => {
     try {
       if (items && typeof items === "string") {
-        setData(JSON.parse(items));
+        const parsedItems = JSON.parse(items);
+        setData(parsedItems);
       } else {
         setData(Array.isArray(items) ? items : fakeData);
       }
@@ -44,20 +54,27 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
       console.log(error);
     }
   }, [items]);
+
   function isValidUrl(file_link: string) {
     try {
       new URL(file_link);
       return true;
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       return false;
     }
   }
+
   const renderTimelineItem = (item: TimelineItem, index: number) => (
     <React.Fragment key={item.id}>
       <li key={item.id}>
         <div className="timeline-middle h-16">
-          {new Date(item.date) < new Date() ? (
+          {new Date(item.date.split("/").reverse().join("-")).setHours(
+            0,
+            0,
+            0,
+            0,
+          ) <= new Date().setHours(0, 0, 0, 0) ? (
             <span className="badge badge-primary size-4.5 rounded-full p-0">
               <span className="icon-[tabler--check] text-primary-content size-3.5"></span>
             </span>
@@ -67,6 +84,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
             </span>
           )}
         </div>
+        {/* desktop responsive */}
         <>
           <div
             className={`timeline-${index % 2 === 0 ? "start" : "end"} me-4 mt-8 max-md:pt-2 hidden md:block`}
@@ -88,21 +106,27 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
               <div className="card-body gap-4">
                 <h5 className="card-title text-lg">{item.title}</h5>
                 <p className="text-justify">{item.details}</p>
-                {(item.file_link || item.buttonName) && (
+                {item.buttonList && (
                   <div className="card-actions">
-                    {item.file_link?.trim() && isValidUrl(item.file_link) ? (
-                      <a
-                        href={item.file_link}
-                        className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
-                        onClick={(e) => e.stopPropagation()}
-                        target="_blank"
-                      >
-                        {item.buttonName ? item.buttonName : "File Link"}
-                      </a>
-                    ) : (
-                      <span className="btn btn-sm btn-soft bg-blue-500 text-gray-50">
-                        {item.buttonName ? item.buttonName : "File Link"}
-                      </span>
+                    {item.buttonList.map((button, idx) =>
+                      isValidUrl(button.link) ? (
+                        <a
+                          key={idx}
+                          href={button.link}
+                          className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
+                          onClick={(e) => e.stopPropagation()}
+                          target="_blank"
+                        >
+                          {button.name}
+                        </a>
+                      ) : (
+                        <span
+                          key={idx}
+                          className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
+                        >
+                          {button.name}
+                        </span>
+                      ),
                     )}
                   </div>
                 )}
@@ -110,6 +134,7 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
             </div>
           </div>
         </>
+        {/* phone responsive */}
         <>
           <div className="timeline-start me-4 mt-8 max-md:pt-2 block md:hidden">
             <div className="text-base-content/50 text-sm font-normal text-gray-500 dark:text-gray-200">
@@ -129,21 +154,27 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
               <div className="card-body gap-4">
                 <h5 className="card-title text-lg">{item.title}</h5>
                 <p className="text-justify">{item.details}</p>
-                {(item.file_link || item.buttonName) && (
+                {item.buttonList && (
                   <div className="card-actions">
-                    {item.file_link?.trim() && isValidUrl(item.file_link) ? (
-                      <a
-                        href={item.file_link}
-                        className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
-                        onClick={(e) => e.stopPropagation()}
-                        target="_blank"
-                      >
-                        {item.buttonName ? item.buttonName : "File Link"}
-                      </a>
-                    ) : (
-                      <span className="btn btn-sm btn-soft bg-blue-500 text-gray-50">
-                        {item.buttonName ? item.buttonName : "Invalid Link"}
-                      </span>
+                    {item.buttonList.map((button, idx) =>
+                      isValidUrl(button.link) ? (
+                        <a
+                          key={idx}
+                          href={button.link}
+                          className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
+                          onClick={(e) => e.stopPropagation()}
+                          target="_blank"
+                        >
+                          {button.name}
+                        </a>
+                      ) : (
+                        <span
+                          key={idx}
+                          className="btn btn-sm btn-soft bg-blue-500 text-gray-50"
+                        >
+                          {button.name}
+                        </span>
+                      ),
                     )}
                   </div>
                 )}
@@ -152,7 +183,12 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
           </div>
         </>
         {index !== data.length - 1 &&
-          (new Date(item.date) < new Date() ? (
+          (new Date(item.date.split("/").reverse().join("-")).setHours(
+            0,
+            0,
+            0,
+            0,
+          ) <= new Date().setHours(0, 0, 0, 0) ? (
             <hr className="bg-primary" />
           ) : (
             <hr />
@@ -199,18 +235,25 @@ const TimeLine = ({ items }: { items?: string | TimelineItem[] }) => {
       )}
     </React.Fragment>
   );
+
   return (
     <div className="w-full">
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical timeline-centered">
-        {data.map((item: TimelineItem, index: number) =>
-          renderTimelineItem(item, index)
-        )}
+        {data
+          .sort((a, b) => {
+            const [dayA, monthA, yearA] = a.date.split("/").map(Number);
+            const [dayB, monthB, yearB] = b.date.split("/").map(Number);
+            return (
+              new Date(yearA, monthA - 1, dayA).getTime() -
+              new Date(yearB, monthB - 1, dayB).getTime()
+            );
+          })
+          .map((item: TimelineItem, index: number) =>
+            renderTimelineItem(item, index),
+          )}
       </ul>
     </div>
   );
 };
 
 export default TimeLine;
-
-
-
