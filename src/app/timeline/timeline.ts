@@ -6,14 +6,27 @@ export const fakeData: TimelineItemType[] = [
     status: "completed",
     title: "Nhận đề bài Technical Interview",
     details:
-      "Sinh viên sẽ nhận được đề bài technical interview nhỏ theo dạng take-home project. Sinh viên cần hoàn thành và demonstrate cho nhà tuyển dụng tại buổi Mock Interview. Nhà tuyển dụng sẽ đặt các câu hỏi xoay quanh các kiến thức liên quan đến kết quả của bài tập",
+      "Sinh viên sẽ nhận được đề bài technical interview nhỏ theo dạng take-home project. Sinh viên cần hoàn thành và present cho nhà tuyển dụng tại buổi Mock Interview. Nhà tuyển dụng sẽ đặt các câu hỏi xoay quanh các kiến thức liên quan đến kết quả của bài tập",
     category: "Giaidoan_1",
     is_show: true,
     buttonList: [
       {
-        name: "will be available on 06 Jan 2025",
-        link: "",
+        name: "Đề bài SWE-Backend",
+        link: "http://ojt-spring-2025.notion.site",
       },
+      {
+        name: "Đề bài SWE-Frontend",
+        link: "https://ojt-spring-2025.notion.site/Software-Engineer-Frontend-1-1722be78cf5a8099af0fc3c4e2998335?pvs=4",
+      },
+      {
+        name: "Đề bài Quality Control Engineer",
+        link: "https://ojt-spring-2025.notion.site/Quality-Control-Engineer-1732be78cf5a80018972e479c575dffe?pvs=4",
+      },
+      {
+        name: "Đề bài Business Analyst",
+        link: "https://ojt-spring-2025.notion.site/Business-Analyst-1722be78cf5a80c8bb4af9b8e1431dd5?pvs=4",
+      },
+
     ],
     popupContent: undefined,
     isPopupFullScreen: false,
