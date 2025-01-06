@@ -26,7 +26,6 @@ export const fakeData: TimelineItemType[] = [
         name: "Đề bài Business Analyst",
         link: "https://ojt-spring-2025.notion.site/Business-Analyst-1722be78cf5a80c8bb4af9b8e1431dd5?pvs=4",
       },
-
     ],
     popupContent: undefined,
     isPopupFullScreen: false,
@@ -131,7 +130,7 @@ export const fakeData: TimelineItemType[] = [
     popupContent: `<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Barem Điểm Mock Interview</title> <script src="https://cdn.tailwindcss.com"></script> </head> <body class="flex justify-center items-center min-h-screen bg-gray-900"> <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md"> <h1 class="text-lg sm:text-xl font-bold text-gray-800 mb-4 text-center"> BAREM ĐIỂM MOCK INTERVIEW </h1> <p class="text-gray-700 text-sm sm:text-base leading-relaxed"> <span class="font-bold text-blue-500">20%</span> từ kết quả của bài take-home project </p> <p class="text-gray-700 text-sm sm:text-base mt-4 leading-relaxed"> <span class="font-bold text-blue-500">80%</span> từ 2-4 câu hỏi phỏng vấn lý thuyết chuyên ngành và liên quan đến bài take-home project </p> <hr class="border-t-2 border-dashed border-gray-300 my-4"> <p class="text-gray-800 text-sm sm:text-base lg:text-lg font-semibold text-center"> = <span class="text-blue-500">100%</span> kết quả Mock Interview </p> </div> </body> </html> `,
     isPopupFullScreen: false,
     buttonList: [],
-    date: "09:00 - 12:00 10/01/2025",
+    date: "10/01/2025",
   },
   {
     id: 9,
@@ -206,5 +205,36 @@ export const fakeData: TimelineItemType[] = [
       },
     ],
     date: "06/01/2025",
+  },
+  {
+    id: 13,
+    status: "completed",
+    title: "Hoàn thành CV",
+    details:
+      "Sinh viên sẽ nộp CV đã hoàn thiện để sử dụng trong buổi Mock Interview",
+    category: "Giaidoan_1",
+    is_show: true,
+    popupContent: undefined,
+    isPopupFullScreen: false,
+    buttonList: [
+      {
+        name: "Link nộp CV",
+        link: "bỏ link google form vào",
+      },
+    ],
+    date: "08/01/2025",
+  },
+  {
+    id: 14,
+    status: "completed",
+    title: "Hoàn thành bài tập Technical Interview",
+    details:
+      "Sinh viên sẽ phải hoàn thành bài tập Technical Interview trước ngày Mock Interview vì các câu hỏi phỏng vấn sẽ liên quan đến bài tập này. Lưu ý sinh viên phải chạy được ứng dụng thành công ở local nếu là các bài tập liên quan đến coding",
+    category: "Giaidoan_1",
+    is_show: true,
+    popupContent: undefined,
+    isPopupFullScreen: false,
+    buttonList: [],
+    date: "09/01/2025",
   },
 ];
