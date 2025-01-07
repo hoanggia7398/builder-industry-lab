@@ -218,8 +218,8 @@ export const fakeData: TimelineItemType[] = [
     isPopupFullScreen: false,
     buttonList: [
       {
-        name: "https://forms.gle/7fWpvBiSx3eGzuh27",
-        link: "bỏ link google form vào",
+        name: "Link nộp CV",
+        link: "https://forms.gle/7fWpvBiSx3eGzuh27",
       },
     ],
     date: "08/01/2025",
