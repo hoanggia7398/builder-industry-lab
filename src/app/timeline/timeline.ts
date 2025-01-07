@@ -112,7 +112,7 @@ export const fakeData: TimelineItemType[] = [
     buttonList: [
       {
         name: "Link nộp bài",
-        link: "bỏ link google form vào",
+        link: "https://forms.gle/cxtvTccq5pprFBid6",
       },
     ],
     popupContent: undefined,
