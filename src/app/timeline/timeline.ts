@@ -136,13 +136,11 @@ export const fakeData: TimelineItemType[] = [
     id: 9,
     status: "completed",
     title: "Workshop: Opportunities for students in the face of the new wave of technology",
-    details: "NCS. ThS. Phan Nguyễn Trúc Phương. Trưởng nhóm đào tạo dịch vụ KD
-Ông Hoàng Châu Nhị Tú, Giám đốc phát triển thị trường Bitdefender (14h00 -16h00)",
+    details: "NCS. ThS. Phan Nguyễn Trúc Phương. Trưởng nhóm đào tạo dịch vụ KD Ông Hoàng Châu Nhị Tú, Giám đốc phát triển thị trường Bitdefender\nThời gian: 14h00 -16h00",
     category: "Giaidoan_1",
     is_show: true,
     popupContent: undefined,
     isPopupFullScreen: false,
-
     buttonList: [],
     date: "10/01/2025",
   },
@@ -151,7 +149,7 @@ export const fakeData: TimelineItemType[] = [
     status: "completed",
     title: "Mock Interview",
     details:
-      "Sinh viên sẽ đến trường theo thời gian hẹn trước để tiến hành phỏng vấn ở vị trí mà các bạn chọn",
+      "Sinh viên sẽ đến trường theo thời gian hẹn trước để tiến hành phỏng vấn ở vị trí mà các bạn chọn\nThời gian: 8h30 -13h00",
     category: "Giaidoan_1",
     is_show: true,
     popupContent: `<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Barem Điểm Mock Interview</title> <script src="https://cdn.tailwindcss.com"></script> </head> <body class="flex justify-center items-center min-h-screen bg-gray-900"> <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md"> <h1 class="text-lg sm:text-xl font-bold text-gray-800 mb-4 text-center"> BAREM ĐIỂM MOCK INTERVIEW </h1> <p class="text-gray-700 text-sm sm:text-base leading-relaxed"> <span class="font-bold text-blue-500">20%</span> từ kết quả của bài take-home project </p> <p class="text-gray-700 text-sm sm:text-base mt-4 leading-relaxed"> <span class="font-bold text-blue-500">80%</span> từ 2-4 câu hỏi phỏng vấn lý thuyết chuyên ngành và liên quan đến bài take-home project </p> <hr class="border-t-2 border-dashed border-gray-300 my-4"> <p class="text-gray-800 text-sm sm:text-base lg:text-lg font-semibold text-center"> = <span class="text-blue-500">100%</span> kết quả Mock Interview </p> </div> </body> </html> `,
