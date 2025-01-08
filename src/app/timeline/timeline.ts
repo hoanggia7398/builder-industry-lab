@@ -135,8 +135,9 @@ export const fakeData: TimelineItemType[] = [
   {
     id: 9,
     status: "completed",
-    title: "Workshop: Làn sóng công nghệ nào đang chờ đón sinh viên",
-    details: "Diễn giả HCA",
+    title: "Workshop: Opportunities for students in the face of the new wave of technology",
+    details: "NCS. ThS. Phan Nguyễn Trúc Phương. Trưởng nhóm đào tạo dịch vụ KD
+Ông Hoàng Châu Nhị Tú, Giám đốc phát triển thị trường Bitdefender (14h00 -16h00)",
     category: "Giaidoan_1",
     is_show: true,
     popupContent: undefined,
