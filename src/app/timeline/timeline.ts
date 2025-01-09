@@ -135,8 +135,10 @@ export const fakeData: TimelineItemType[] = [
   {
     id: 9,
     status: "completed",
-    title: "Workshop: Opportunities for students in the face of the new wave of technology",
-    details: "NCS. ThS. Phan Nguyễn Trúc Phương. Trưởng nhóm đào tạo dịch vụ KD Ông Hoàng Châu Nhị Tú, Giám đốc phát triển thị trường Bitdefender\nThời gian: 14h00 -16h00",
+    title:
+      "Workshop: Opportunities for students in the face of the new wave of technology",
+    details:
+      "NCS. ThS. Phan Nguyễn Trúc Phương. Trưởng nhóm đào tạo dịch vụ KD Ông Hoàng Châu Nhị Tú, Giám đốc phát triển thị trường Bitdefender\nThời gian: 14h00 -16h00",
     category: "Giaidoan_1",
     is_show: true,
     popupContent: undefined,
@@ -235,5 +237,23 @@ export const fakeData: TimelineItemType[] = [
     isPopupFullScreen: false,
     buttonList: [],
     date: "09/01/2025",
+  },
+  {
+    id: 15,
+    status: "completed",
+    title: "Google Meet - Mock Interview",
+    details:
+      "Sinh viên sẽ tham gia Google Meet - Room Present bài tập Technical trong khi tham gia Mock Interview \n Note: Sinh viên bắt buộc phải mang theo laptop cá nhân để present bài tập.",
+    category: "Giaidoan_1",
+    is_show: true,
+    popupContent: undefined,
+    isPopupFullScreen: false,
+    buttonList: [
+      {
+        name: "Phòng G",
+        link: "meet.google.com/oax-pixy-pta",
+      },
+    ],
+    date: "08/01/2025",
   },
 ];
