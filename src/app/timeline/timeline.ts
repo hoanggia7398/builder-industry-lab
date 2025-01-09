@@ -254,6 +254,6 @@ export const fakeData: TimelineItemType[] = [
         link: "meet.google.com/oax-pixy-pta",
       },
     ],
-    date: "08/01/2025",
+    date: "10/01/2025",
   },
 ];
