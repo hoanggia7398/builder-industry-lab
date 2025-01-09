@@ -133,7 +133,7 @@ export const fakeData: TimelineItemType[] = [
     buttonList: [
       {
         name: "Phòng G",
-        link: "meet.google.com/oax-pixy-pta",
+        link: "https://meet.google.com/oax-pixy-pta",
       },
       {
         name: "Phòng M",
