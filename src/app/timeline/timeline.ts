@@ -255,34 +255,4 @@ export const fakeData: TimelineItemType[] = [
     buttonList: [],
     date: "09/01/2025",
   },
-  {
-    id: 15,
-    status: "completed",
-    title: "Google Meet - Mock Interview",
-    details:
-      "Sinh viên sẽ tham gia Google Meet - Room Present bài tập Technical trong khi tham gia Mock Interview \n Note: Sinh viên bắt buộc phải mang theo laptop cá nhân để present bài tập.",
-    category: "Giaidoan_1",
-    is_show: true,
-    popupContent: undefined,
-    isPopupFullScreen: false,
-    buttonList: [
-      {
-        name: "Phòng G",
-        link: "meet.google.com/oax-pixy-pta",
-      },
-      {
-        name: "Phòng M",
-        link: "meet.google.com/oax-pixy-pta",
-      },
-      {
-        name: "Phòng T",
-        link: "meet.google.com/oax-pixy-pta",
-      },
-      {
-        name: "Phòng H",
-        link: "meet.google.com/oax-pixy-pta",
-      },
-    ],
-    date: "10/01/2025",
-  },
 ];
