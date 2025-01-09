@@ -124,13 +124,30 @@ export const fakeData: TimelineItemType[] = [
     status: "completed",
     title: "Mock Interview",
     details:
-      "Sinh viên sẽ đến trường theo thời gian hẹn trước để tiến hành phỏng vấn ở vị trí mà các bạn chọn\n(click vào để xem barem điểm)",
+      "Sinh viên sẽ đến trường theo thời gian hẹn trước để tiến hành phỏng vấn ở vị trí mà các bạn chọn\n(click vào để xem barem điểm)\n\nSinh viên sẽ tham gia Google Meet - Room Present bài tập Technical trong khi tham gia Mock Interview \n Note: Sinh viên bắt buộc phải mang theo laptop cá nhân để present bài tập.",
     category: "Giaidoan_1",
     is_show: true,
     popupContent: `<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Barem Điểm Mock Interview</title> <script src="https://cdn.tailwindcss.com"></script> </head> <body class="flex justify-center items-center min-h-screen bg-gray-900"> <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md"> <h1 class="text-lg sm:text-xl font-bold text-gray-800 mb-4 text-center"> BAREM ĐIỂM MOCK INTERVIEW </h1> <p class="text-gray-700 text-sm sm:text-base leading-relaxed"> <span class="font-bold text-blue-500">20%</span> từ kết quả của bài take-home project </p> <p class="text-gray-700 text-sm sm:text-base mt-4 leading-relaxed"> <span class="font-bold text-blue-500">80%</span> từ 2-4 câu hỏi phỏng vấn lý thuyết chuyên ngành và liên quan đến bài take-home project </p> <hr class="border-t-2 border-dashed border-gray-300 my-4"> <p class="text-gray-800 text-sm sm:text-base lg:text-lg font-semibold text-center"> = <span class="text-blue-500">100%</span> kết quả Mock Interview </p> </div> </body> </html> `,
     isPopupFullScreen: false,
-    buttonList: [],
     date: "10/01/2025",
+    buttonList: [
+      {
+        name: "Phòng G",
+        link: "meet.google.com/oax-pixy-pta",
+      },
+      {
+        name: "Phòng M",
+        link: "link",
+      },
+      {
+        name: "Phòng T",
+        link: "link",
+      },
+      {
+        name: "Phòng H",
+        link: "link",
+      },
+    ],
   },
   {
     id: 9,
@@ -251,6 +268,18 @@ export const fakeData: TimelineItemType[] = [
     buttonList: [
       {
         name: "Phòng G",
+        link: "meet.google.com/oax-pixy-pta",
+      },
+      {
+        name: "Phòng M",
+        link: "meet.google.com/oax-pixy-pta",
+      },
+      {
+        name: "Phòng T",
+        link: "meet.google.com/oax-pixy-pta",
+      },
+      {
+        name: "Phòng H",
         link: "meet.google.com/oax-pixy-pta",
       },
     ],
