@@ -141,7 +141,7 @@ export const fakeData: TimelineItemType[] = [
       },
       {
         name: "Phòng T",
-        link: "link",
+        link: "https://meet.google.com/zwz-qxwy-zxp",
       },
       {
         name: "Phòng H",
