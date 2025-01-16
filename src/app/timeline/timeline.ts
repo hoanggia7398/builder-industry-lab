@@ -208,18 +208,22 @@ export const fakeData: TimelineItemType[] = [
       {
         name: "Group FE",
         link: "https://zalo.me/g/rtypvj912",
+        isDisabled: true,
       },
       {
         name: "Group BE",
         link: "https://zalo.me/g/avvjpe852",
+        isDisabled: true,
       },
       {
         name: "Group QA",
         link: "https://zalo.me/g/qmgjiq276",
+        isDisabled: true,
       },
       {
         name: "Group BA",
         link: "https://zalo.me/g/tladsa063",
+        isDisabled: true,
       },
     ],
     date: "06/01/2025",
